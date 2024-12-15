@@ -1,0 +1,58 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block body_block %}
+<section class="container-fluid newmargin1 ">
+    <div class="row">
+        <div class="col-6 m-auto ">
+            <div class="card new-margin ">
+                <div class="card-header">
+                    <h2 class="h2">Login Form</h2>
+                </div>
+                <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary text-white fs-4"><i class="fa-solid fa-circle-user"></i></span>
+                                <input type="text" placeholder="Enter Username" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="input-group mt-2">
+                                <span class="input-group-text bg-secondary text-white fs-5"><i class="fa-solid fa-eye" id="eye-icon"></i></span>
+                                <input type="password" maxlength="10" placeholder="Enter Password" name="password" id="password" class="form-control" id="pw-block">
+                                
+                            </div>
+                            <ul class="text-start">
+                                <li>Your password must be 10 characters</li>
+                                <p>must have combination of</p>
+                                <li>special Characters</li>
+                                <li>numbers</li>
+                                <li>capital letters and lower letters</li>
+                            </ul>
+                            
+                            <input type="submit" class="button-color" value="Login">
+
+                            
+                            
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                
+                <a href="{% url 'courses' %}"><i class="fab fa-facebook fa-2x" style="color: #1877F2;"></i></a>
+            </a>
+            <a href="https://www.google.com" target="_blank" class="mx-2">
+                <i class="fab fa-google fa-2x" style="color: #DB4437;"></i>
+            </a>
+            </div>
+        </div>
+    
+</section>
+{% endblock %}

@@ -1,0 +1,331 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+    <title>Interface</title>
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block body_block %}
+    {% if username %}
+        <section class="container-fluid newmargin">
+            <div class="row">
+                <div class="col-6 m-auto">
+                    <div class="card new-margin">
+                        <div class="card-header">
+                            <h2 class="h2">Welcome to interface page {{username}}</h2>
+                        </div>
+                        <div class="card-body">
+                            {% if items.title == 'Python' %}
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scrolling Videos</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            display: flex; /* Use flexbox for horizontal layout */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Enable snap scrolling */
+            gap: 20px; /* Add space between videos */
+            padding: 20px;
+            scrollbar-width: none; /* Hide scrollbar (Firefox) */
+        }
+
+        .video-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar (Chrome, Safari, Edge) */
+        }
+
+        .content {
+            flex: 0 0 auto; /* Prevent shrinking */
+            text-align: center;
+            scroll-snap-align: center; /* Ensure the videos snap to center */
+        }
+
+        video {
+            width: 300px; /* Consistent width for all videos */
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .nav-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .python-links {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .python-links h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .python-links a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .python-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container" id="videoContainer">
+        <div class="content">
+            <h2>Introduction</h2>
+            {% load static %}
+            <video controls>
+                <source src="{% static 'images/intro.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="content">
+            <h2>Lesson1</h2>
+            {% load static %}
+            <video controls>
+                <source src="{% static 'images/2nd.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="content">
+            <h2>Lesson2</h2>
+            {% load static %}
+            <video controls>
+                <source src="{% static 'images/3rd.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="scrollToPrevious()">Previous Video</button>
+        <button class="nav-btn" onclick="scrollToNext()">Next Video</button>
+    </div>
+
+    <!-- Python Links Section -->
+    <div class="python-links">
+        <h3>Stepwise Guide For Learning Python </h3>
+        <a href="https://www.w3schools.com/python/" target="_blank">Python Tutorials at W3Schools</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function scrollToNext() {
+            const videos = document.querySelectorAll('.content');
+            const container = document.querySelector('.video-container');
+            currentIndex = (currentIndex + 1) % videos.length; // Increment index and loop
+            const nextVideo = videos[currentIndex];
+            container.scrollTo({
+                left: nextVideo.offsetLeft - container.offsetLeft,
+                behavior: 'smooth',
+            });
+        }
+
+        function scrollToPrevious() {
+            const videos = document.querySelectorAll('.content');
+            const container = document.querySelector('.video-container');
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length; // Decrement index and loop
+            const prevVideo = videos[currentIndex];
+            container.scrollTo({
+                left: prevVideo.offsetLeft - container.offsetLeft,
+                behavior: 'smooth',
+            });
+        }
+    </script>
+</body>
+</html>
+
+                            
+                            
+
+
+                            
+                            
+<
+
+                            
+                    
+                            
+                        {% elif items.title == 'Java' %}
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Java Programming Hub</title>
+                            <link rel="stylesheet" href="styles.css">
+                            <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                    margin: 0;
+                                    padding: 0;
+                                    line-height: 1.6;
+                                }
+                                header {
+                                    background: #333;
+                                    color: #fff;
+                                    padding: 1rem 0;
+                                    text-align: center;
+                                }
+                                header h1 {
+                                    margin: 0;
+                                }
+                                nav {
+                                    background: #444;
+                                    color: #fff;
+                                    padding: 0.5rem 0;
+                                    text-align: center;
+                                }
+                                nav a {
+                                    color: #fff;
+                                    margin: 0 1rem;
+                                    text-decoration: none;
+                                }
+                                nav a:hover {
+                                    text-decoration: underline;
+                                }
+                                main {
+                                    padding: 2rem;
+                                }
+                                section {
+                                    margin-bottom: 2rem;
+                                }
+                                footer {
+                                    background: #333;
+                                    color: #fff;
+                                    text-align: center;
+                                    padding: 1rem 0;
+                                    position: fixed;
+                                    bottom: 0;
+                                    width: 100%;
+                                }
+                                .features {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: space-between;
+                                }
+                                .feature {
+                                    flex: 1 1 calc(33% - 1rem);
+                                    margin: 0.5rem;
+                                    padding: 1rem;
+                                    background: #f4f4f4;
+                                    border: 1px solid #ddd;
+                                }
+                                .feature h3 {
+                                    margin-top: 0;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <header>
+                                <h1>Welcome to Java Programming Hub</h1>
+                                <p>Your ultimate guide to mastering Java!</p>
+                            </header>
+                        
+                            <nav>
+                                <a href="#about">About Java</a>
+                                <a href="#features">Features</a>
+                                <a href="#tutorials">Tutorials</a>
+                                <a href="#resources">Resources</a>
+                                <a href="#contact">Contact</a>
+                            </nav>
+                        
+                            <main>
+                                <section id="about">
+                                    <h2>About Java</h2>
+                                    <p>Java is a high-level, class-based, object-oriented programming language widely used for building applications. It is platform-independent and provides robust features for developers.</p>
+                                </section>
+                        
+                                <section id="features">
+                                    <h2>Key Features of Java</h2>
+                                    <div class="features">
+                                        <div class="feature">
+                                            <h3>Platform Independent</h3>
+                                            <p>Write once, run anywhere! Java code can run on any device with a JVM.</p>
+                                        </div>
+                                        <div class="feature">
+                                            <h3>Object-Oriented</h3>
+                                            <p>Java is based on OOP principles, making it modular, scalable, and easy to maintain.</p>
+                                        </div>
+                                        <div class="feature">
+                                            <h3>Secure</h3>
+                                            <p>Java provides advanced security features for application development.</p>
+                                        </div>
+                                    </div>
+                                </section>
+                        
+                                <section id="tutorials">
+                                    <h2>Java Tutorials</h2>
+                                    <p>Start learning Java today with our step-by-step tutorials:</p>
+                                    <ul>
+                                        <li><a href="/basics">Java Basics</a></li>
+                                        <li><a href="/oop">Object-Oriented Programming</a></li>
+                                        <li><a href="/advanced">Advanced Java Features</a></li>
+                                    </ul>
+                                </section>
+                        
+                                <section id="resources">
+                                    <h2>Additional Resources</h2>
+                                    <p>Enhance your Java skills with these resources:</p>
+                                    <ul>
+                                        <li><a href="https://docs.oracle.com/javase/tutorial/" target="_blank">Official Java Documentation</a></li>
+                                        <li><a href="https://stackoverflow.com/questions/tagged/java" target="_blank">Java Community on StackOverflow</a></li>
+                                        <li><a href="https://www.javatpoint.com/" target="_blank">Java Tutorials on JavaTpoint</a></li>
+                                    </ul>
+                                </section>
+                        
+                                
+                            </main>
+                        
+                            
+                        </body>
+                        </html>
+                        
+                        {% else %}
+                            <img src="{% static 'images/default-logo.png' %}" width="100px" height="100px" alt="Default Logo">
+                        {% endif %}
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    
+
+    
+{% endblock %}

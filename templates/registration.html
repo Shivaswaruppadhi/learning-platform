@@ -1,0 +1,38 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<section class="container-fluid new pt-5 mt-5">
+    <div class="row pt-5 mt-5">
+        <div class="col-6 m-auto pt-5 mt-5">
+            <div class="card new-margin pt-5 mt-5">
+                <div class="card-header">
+                    <h2 class="h2">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{EUFO.as_p}}
+                            <ul class="text-start">
+                                <li>Your password must be 10 characters</li>
+                                <p>must have combination of</p>
+                                <li>special Characters</li>
+                                <li>numbers</li>
+                                <li>capital letters and lower letters</li>
+                            </ul>
+                            
+                            {{EPFO.as_p}}
+
+                            <input type="submit" class="button-color" value="registration">
+                            
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

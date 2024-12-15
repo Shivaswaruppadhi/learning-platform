@@ -1,0 +1,31 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+<title>Courses Page</title>
+<link rel="stylesheet" href="{% static 'css/styling.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="container-fluid newmargin">
+    <div class="row">
+        {% for it in items %}
+            <div class="col-6 m-auto">
+                <div class="card new-margin">
+                    <div class="card-header">
+                        <h2 class="h2">{{it.title}}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>{{it.content}}</p>
+                        <p>{{it.prize}}</p>
+                        <button><a href="{% url 'EnrollmentDetails' %}">Enroll Here</a></button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

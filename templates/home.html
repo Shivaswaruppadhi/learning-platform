@@ -1,0 +1,31 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block body_block %}
+    <section class="container-fluid newmargin">
+        <div class="row">
+            <div class="col-6 m-auto text-center">
+                {% if username %}
+                    <div class="card new-margin">
+                        <div class="card-header">
+                            <h2 class="h2">Welcome to home page {{username}}</h2>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="card new-margin">
+                        <div class="card-header">
+                            <h2 class="h2">Welcome to home page</h2>
+                            <h2 class="h2">GO FOR REGISTRATION</h2>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        
+        </div>
+    </section>
+{% endblock %}
